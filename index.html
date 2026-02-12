@@ -1,263 +1,303 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Nataraj H N | Visionary Founder</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nataraj H N | Visionary Founder</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Segoe UI',sans-serif;
-    scroll-behavior:smooth;
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+scroll-behavior:smooth;
 }
 
 body{
-    background: linear-gradient(-45deg,#0f2027,#203a43,#2c5364,#000428);
-    background-size:400% 400%;
-    animation:gradient 15s ease infinite;
-    color:white;
+background:linear-gradient(-45deg,#0f2027,#203a43,#2c5364,#000428);
+background-size:400% 400%;
+animation:gradient 15s ease infinite;
+color:white;
+overflow-x:hidden;
 }
 
 @keyframes gradient{
-    0%{background-position:0% 50%;}
-    50%{background-position:100% 50%;}
-    100%{background-position:0% 50%;}
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
 }
 
 nav{
-    position:fixed;
-    width:100%;
-    padding:20px 80px;
-    display:flex;
-    justify-content:space-between;
-    background:rgba(0,0,0,0.4);
-    backdrop-filter:blur(10px);
-    z-index:1000;
+position:fixed;
+width:100%;
+padding:20px 80px;
+display:flex;
+justify-content:space-between;
+background:rgba(0,0,0,0.4);
+backdrop-filter:blur(10px);
+z-index:1000;
 }
 
 nav a{
-    color:white;
-    text-decoration:none;
-    margin-left:25px;
-    transition:0.3s;
+color:white;
+text-decoration:none;
+margin-left:25px;
+transition:0.3s;
 }
 
 nav a:hover{
-    color:#00eaff;
+color:#00eaff;
 }
 
 section{
-    padding:120px 10%;
-}
-
-h2{
-    text-align:center;
-    margin-bottom:50px;
-    font-size:36px;
-    color:#00eaff;
+padding:120px 10%;
 }
 
 .hero{
-    height:100vh;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+position:relative;
 }
 
 .hero h1{
-    font-size:60px;
+font-size:60px;
 }
 
-.hero span{
-    color:#00eaff;
-}
-
-.hero p{
-    margin-top:20px;
-    font-size:22px;
-    opacity:0.9;
+.highlight{
+color:#00eaff;
 }
 
 .btn{
-    margin-top:30px;
-    padding:14px 30px;
-    background:#00eaff;
-    color:black;
-    border-radius:30px;
-    text-decoration:none;
-    font-weight:bold;
-    transition:0.3s;
+margin-top:30px;
+padding:14px 30px;
+background:#00eaff;
+color:black;
+border-radius:30px;
+text-decoration:none;
+font-weight:bold;
+transition:0.3s;
 }
 
 .btn:hover{
-    transform:scale(1.1);
-    background:white;
+transform:scale(1.1);
+background:white;
 }
 
 .card{
-    background:rgba(255,255,255,0.08);
-    backdrop-filter:blur(15px);
-    padding:30px;
-    border-radius:15px;
-    margin-bottom:30px;
-    transition:0.4s;
+background:rgba(255,255,255,0.08);
+backdrop-filter:blur(15px);
+padding:30px;
+border-radius:15px;
+margin-bottom:30px;
+transition:0.4s;
+opacity:0;
+transform:translateY(40px);
 }
 
-.card:hover{
-    transform:translateY(-10px);
-    background:rgba(255,255,255,0.15);
+.card.show{
+opacity:1;
+transform:translateY(0);
 }
 
 .grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:30px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
 }
 
 .stats{
-    display:flex;
-    justify-content:space-around;
-    flex-wrap:wrap;
-    text-align:center;
-}
-
-.stat{
-    margin:20px;
+display:flex;
+justify-content:space-around;
+flex-wrap:wrap;
+text-align:center;
 }
 
 .stat h3{
-    font-size:40px;
-    color:#00eaff;
+font-size:40px;
+color:#00eaff;
 }
 
-.timeline{
-    border-left:3px solid #00eaff;
-    padding-left:30px;
-}
-
-.timeline div{
-    margin-bottom:30px;
+.parallax{
+background:url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f');
+background-size:cover;
+background-attachment:fixed;
+background-position:center;
+color:white;
+text-align:center;
+padding:150px 10%;
 }
 
 footer{
-    text-align:center;
-    padding:40px;
-    background:rgba(0,0,0,0.5);
+text-align:center;
+padding:40px;
+background:rgba(0,0,0,0.5);
+}
+
+canvas{
+position:fixed;
+top:0;
+left:0;
+z-index:-1;
 }
 
 @media(max-width:768px){
-    .hero h1{font-size:40px;}
-    nav{padding:20px;}
+.hero h1{font-size:40px;}
+nav{padding:20px;}
 }
 </style>
 </head>
 
 <body>
 
+<canvas id="particles"></canvas>
+
 <nav>
-    <div><b>Nataraj H N</b></div>
-    <div>
-        <a href="#about">About</a>
-        <a href="#vision">Vision</a>
-        <a href="#skills">Skills</a>
-        <a href="#journey">Journey</a>
-        <a href="#contact">Contact</a>
-    </div>
+<div><b>Nataraj H N</b></div>
+<div>
+<a href="#about">About</a>
+<a href="#vision">Vision</a>
+<a href="#skills">Skills</a>
+<a href="#contact">Contact</a>
+</div>
 </nav>
 
 <section class="hero">
-    <h1>Building <span>Assets</span> Not Just Income</h1>
-    <p>Future Entrepreneur | Trader | Strategic Visionary</p>
-    <a href="#contact" class="btn">Connect With Me</a>
+<h1>I Build <span class="highlight" id="typing"></span></h1>
+<p>Future Entrepreneur | Trader | Strategic Visionary</p>
+<a href="#contact" class="btn">Let's Connect</a>
 </section>
 
 <section id="about">
-    <h2>About Me</h2>
-    <div class="card">
-        I am focused on building long-term wealth, scalable systems, and
-        impactful ventures. My mindset revolves around discipline,
-        strategic execution, and continuous self-improvement.
-    </div>
+<h2 style="text-align:center;color:#00eaff;">About Me</h2>
+<div class="card">
+Focused on long-term wealth creation, scalable ventures, and high-impact execution.
+I believe discipline + vision = unstoppable growth.
+</div>
 </section>
 
 <section id="vision">
-    <h2>Vision & Mission</h2>
-    <div class="grid">
-        <div class="card">
-            <h3>Vision</h3>
-            To create sustainable businesses that generate freedom,
-            influence, and global impact.
-        </div>
-        <div class="card">
-            <h3>Mission</h3>
-            Learn, build, execute, optimize, and scale consistently.
-        </div>
-    </div>
+<h2 style="text-align:center;color:#00eaff;">Vision & Mission</h2>
+<div class="grid">
+<div class="card">Create global businesses that generate freedom and impact.</div>
+<div class="card">Continuously learn, execute, optimize, and scale.</div>
+</div>
 </section>
 
 <section id="skills">
-    <h2>Core Strengths</h2>
-    <div class="grid">
-        <div class="card">Entrepreneurial Thinking</div>
-        <div class="card">Market Analysis</div>
-        <div class="card">Digital Strategy</div>
-        <div class="card">Long-term Planning</div>
-    </div>
+<h2 style="text-align:center;color:#00eaff;">Core Strengths</h2>
+<div class="grid">
+<div class="card">Entrepreneurial Thinking</div>
+<div class="card">Market Strategy</div>
+<div class="card">Digital Asset Building</div>
+<div class="card">Long-Term Planning</div>
+</div>
 </section>
 
 <section>
-    <h2>Growth Stats</h2>
-    <div class="stats">
-        <div class="stat">
-            <h3>3+</h3>
-            <p>Years Learning Markets</p>
-        </div>
-        <div class="stat">
-            <h3>100+</h3>
-            <p>Hours Business Study</p>
-        </div>
-        <div class="stat">
-            <h3>∞</h3>
-            <p>Ambition Level</p>
-        </div>
-    </div>
+<h2 style="text-align:center;color:#00eaff;">Growth Stats</h2>
+<div class="stats">
+<div class="stat"><h3 id="counter1">0</h3><p>Years Learning</p></div>
+<div class="stat"><h3 id="counter2">0</h3><p>Hours Study</p></div>
+<div class="stat"><h3 id="counter3">0</h3><p>Ambition</p></div>
+</div>
 </section>
 
-<section id="journey">
-    <h2>My Journey</h2>
-    <div class="timeline">
-        <div>
-            <h3>2024</h3>
-            Started exploring entrepreneurship and financial markets.
-        </div>
-        <div>
-            <h3>2025</h3>
-            Focused on skill development and digital assets.
-        </div>
-        <div>
-            <h3>2026</h3>
-            Building scalable income systems and founder mindset.
-        </div>
-    </div>
-</section>
+<div class="parallax">
+<h2>Building Assets. Not Just Income.</h2>
+</div>
 
 <section id="contact">
-    <h2>Let’s Build Something Big</h2>
-    <div class="card">
-        Email:-nataraja.mdrs@gmail.com <br><br>
-        Open to collaborations, ideas, and growth partnerships.
-        <br><br>
-        <a href="#" class="btn">Start Conversation</a>
-    </div>
+<h2 style="text-align:center;color:#00eaff;">Let's Build Something Big</h2>
+<div class="card">
+Email: your-email@example.com <br><br>
+Open to collaborations and big ideas.
+<br><br>
+<a href="#" class="btn">Start Conversation</a>
+</div>
 </section>
 
 <footer>
-    © 2026 Nataraj H N | Visionary Founder Portfolio
+© 2026 Nataraj H N | Elite Founder Portfolio
 </footer>
+
+<script>
+/* Typing Effect */
+const words=["Wealth","Vision","Systems","Freedom"];
+let i=0,j=0,currentWord="",isDeleting=false;
+function type(){
+currentWord=words[i];
+if(!isDeleting){
+document.getElementById("typing").textContent=currentWord.substring(0,j++);
+if(j>currentWord.length){isDeleting=true;setTimeout(type,1000);return;}
+}else{
+document.getElementById("typing").textContent=currentWord.substring(0,j--);
+if(j<0){isDeleting=false;i=(i+1)%words.length;}
+}
+setTimeout(type,120);
+}
+type();
+
+/* Scroll Reveal */
+const cards=document.querySelectorAll('.card');
+window.addEventListener('scroll',()=>{
+cards.forEach(card=>{
+const rect=card.getBoundingClientRect();
+if(rect.top<window.innerHeight-100){
+card.classList.add('show');
+}
+});
+});
+
+/* Animated Counters */
+function animateCounter(id,target){
+let count=0;
+let increment=target/100;
+let interval=setInterval(()=>{
+count+=increment;
+if(count>=target){
+count=target;
+clearInterval(interval);
+}
+document.getElementById(id).textContent=Math.floor(count);
+},20);
+}
+animateCounter("counter1",3);
+animateCounter("counter2",500);
+animateCounter("counter3",100);
+
+/* Particles */
+const canvas=document.getElementById("particles");
+const ctx=canvas.getContext("2d");
+canvas.width=window.innerWidth;
+canvas.height=window.innerHeight;
+let particles=[];
+for(let i=0;i<100;i++){
+particles.push({x:Math.random()*canvas.width,
+y:Math.random()*canvas.height,
+r:Math.random()*2,
+dx:(Math.random()-0.5),
+dy:(Math.random()-0.5)});
+}
+function draw(){
+ctx.clearRect(0,0,canvas.width,canvas.height);
+particles.forEach(p=>{
+ctx.beginPath();
+ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+ctx.fillStyle="#00eaff";
+ctx.fill();
+p.x+=p.dx;
+p.y+=p.dy;
+if(p.x<0||p.x>canvas.width)p.dx*=-1;
+if(p.y<0||p.y>canvas.height)p.dy*=-1;
+});
+requestAnimationFrame(draw);
+}
+draw();
+</script>
 
 </body>
 </html>
