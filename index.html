@@ -1,125 +1,173 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Nataraj H N | Future Entrepreneur</title>
+    <title>Nataraj H N | Founder</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <style>
-        body {
+        * {
             margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #f4f6f9;
-            color: #333;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            color: white;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px 60px;
+            background: rgba(0,0,0,0.3);
+            backdrop-filter: blur(10px);
+        }
+
+        nav h2 {
+            color: #00e0ff;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            margin-left: 25px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #00e0ff;
         }
 
         header {
-            background: #0d1b2a;
-            color: white;
-            padding: 60px 20px;
             text-align: center;
+            padding: 140px 20px;
         }
 
         header h1 {
-            margin: 0;
-            font-size: 40px;
+            font-size: 55px;
+            margin-bottom: 20px;
+        }
+
+        header span {
+            color: #00e0ff;
         }
 
         header p {
-            font-size: 20px;
-            margin-top: 10px;
-        }
-
-        section {
-            padding: 50px 20px;
-            max-width: 900px;
-            margin: auto;
-        }
-
-        h2 {
-            color: #0d1b2a;
-            border-bottom: 2px solid #ddd;
-            padding-bottom: 10px;
-        }
-
-        .card {
-            background: white;
-            padding: 20px;
-            margin-top: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-        }
-
-        footer {
-            text-align: center;
-            padding: 20px;
-            background: #0d1b2a;
-            color: white;
+            font-size: 22px;
+            opacity: 0.9;
         }
 
         .btn {
             display: inline-block;
-            padding: 10px 20px;
-            background: #1b263b;
-            color: white;
+            margin-top: 30px;
+            padding: 14px 30px;
+            background: #00e0ff;
+            color: black;
+            font-weight: bold;
+            border-radius: 30px;
             text-decoration: none;
-            border-radius: 5px;
-            margin-top: 15px;
+            transition: 0.3s;
         }
+
+        .btn:hover {
+            transform: scale(1.05);
+            background: white;
+        }
+
+        section {
+            padding: 80px 10%;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 50px;
+            font-size: 32px;
+            color: #00e0ff;
+        }
+
+        .card {
+            background: rgba(255,255,255,0.08);
+            backdrop-filter: blur(15px);
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            background: rgba(255,255,255,0.15);
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            background: rgba(0,0,0,0.4);
+        }
+
+        @media(max-width:768px){
+            header h1 {
+                font-size: 38px;
+            }
+            nav {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
     </style>
 </head>
 
 <body>
 
+<nav>
+    <h2>Nataraj</h2>
+    <div>
+        <a href="#">Home</a>
+        <a href="#">Vision</a>
+        <a href="#">Focus</a>
+        <a href="#">Contact</a>
+    </div>
+</nav>
+
 <header>
-    <h1>Nataraj H N</h1>
-    <p>Future Entrepreneur | Trader | Creator</p>
+    <h1>Building <span>Wealth</span> & <span>Vision</span></h1>
+    <p>Future Entrepreneur | Trader | Strategic Thinker</p>
+    <a href="#" class="btn">Let’s Connect</a>
 </header>
 
 <section>
-    <h2>About Me</h2>
+    <h2>My Vision</h2>
     <div class="card">
-        <p>
-            I am an ambitious young individual focused on entrepreneurship, 
-            trading, and technology. I believe in hard work, consistency, 
-            and building long-term success through discipline and vision.
-        </p>
+        I aim to build scalable businesses that generate long-term
+        financial independence and create real-world impact.
     </div>
 </section>
 
 <section>
-    <h2>Skills</h2>
+    <h2>Founder Mindset</h2>
     <div class="card">
-        <ul>
-            <li>Basic Web Development</li>
-            <li>Stock Market Learning</li>
-            <li>Entrepreneurship Mindset</li>
-            <li>Strategic Thinking</li>
-        </ul>
+        Entrepreneurship is discipline, calculated risk,
+        innovation, and consistent execution.
+        I focus on building assets — not liabilities.
     </div>
 </section>
 
 <section>
-    <h2>Goals</h2>
+    <h2>Current Focus</h2>
     <div class="card">
-        <p>
-            To build scalable businesses, achieve financial independence, 
-            and create impact through innovation and leadership.
-        </p>
-    </div>
-</section>
-
-<section>
-    <h2>Contact</h2>
-    <div class="card">
-        <p>Email: your-email@example.com</p>
-        <a href="#" class="btn">Connect With Me</a>
+        • Learning business strategy <br><br>
+        • Studying financial markets <br><br>
+        • Developing digital skills <br><br>
+        • Creating long-term value
     </div>
 </section>
 
 <footer>
-    © 2026 Nataraj H N | All Rights Reserved
+    © 2026 Nataraj H N | Premium Founder Portfolio
 </footer>
 
 </body>
 </html>
-
-
